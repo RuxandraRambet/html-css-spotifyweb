@@ -29,7 +29,12 @@ ul {
 a {
     text-decoration: none;
 }
-
+.sidebar-menu span,
+.playlist span,
+.playlist ul li {
+    color: #a3a3a3;
+    font-weight: bold;
+}
 /* NAV SIDEBAR */
 .sidebar {
     width: 230px;
@@ -64,18 +69,37 @@ a {
     margin-bottom: 10px;
 }
 .sidebar-menu span {
-    vertical-align: 20px;
+    vertical-align: 20px;   
     font-size: 14px;
-    color: #a3a3a3;
-    font-weight: bold;
-    
 }
 .sidebar-menu #text-white {
     color: white;
 }
 
 /* PLAYLIST */
-
+.playlist ul {
+    height: 30vh;
+    overflow-y: auto;
+}
+.playlist h4 {
+    color:white;
+    margin-left: 20px;
+    margin-bottom: 15px ;
+}
+.playlist i {
+    font-size: 40px;
+    color: #a3a3a3;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.playlist span {
+    margin-left: 10px;
+    vertical-align: 50%;
+}
+.playlist ul li {
+    margin-left: 20px;
+    line-height: 35px;
+}
 /*************************************************
    RESPONSIVE
  *************************************************/
@@ -101,6 +125,9 @@ a {
     }
     .sidebar-menu ul li img {
         margin: 5px 10px;
+    }
+    .playlist {
+        display: none;
     }
  }
  
