@@ -31,7 +31,9 @@ a {
 }
 .sidebar-menu span,
 .playlist span,
-.playlist ul li {
+.playlist ul li,
+.sidebar-bottom i,
+.sidebar-bottom span {
     color: #a3a3a3;
     font-weight: bold;
 }
@@ -100,6 +102,29 @@ a {
     margin-left: 20px;
     line-height: 35px;
 }
+
+/* SIDEBAR BOTTOM (Install and User) */
+.sidebar-bottom {
+    margin-bottom: 7px;
+}
+.sidebar-bottom i {
+    margin-left: 20px;
+}
+.sidebar-bottom .fa-circle-arrow-down {
+    font-size: 15px;
+    padding-right: 10px;
+}
+.sidebar-bottom .fa-circle-user {
+    font-size: 30px;
+    padding-right: 10px;
+    vertical-align: -20%;
+}
+.sidebar-bottom hr {
+    margin: 12px 17px;
+}
+.user #username {
+    color: white;
+}
 /*************************************************
    RESPONSIVE
  *************************************************/
@@ -128,6 +153,18 @@ a {
     }
     .playlist {
         display: none;
+    }
+    .sidebar-bottom span {
+        display: none;
+    }
+    .sidebar-bottom hr {
+        display: none;
+    }
+    .sidebar-bottom .fa-circle-arrow-down {
+        margin: 18px
+    }
+    .sidebar-bottom .fa-circle-user {
+        margin: 0 12px;
     }
  }
  
