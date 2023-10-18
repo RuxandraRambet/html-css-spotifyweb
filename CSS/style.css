@@ -23,6 +23,12 @@ body {
     overflow: hidden;
     background-color: blue;
 }
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
 
 /* NAV SIDEBAR */
 .sidebar {
@@ -50,6 +56,25 @@ body {
     width: 30px;
     margin: 5px 10px;
 }
+/* SIDEBAR MENU */
+
+.sidebar-menu ul li img {
+    width: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.sidebar-menu span {
+    vertical-align: 20px;
+    font-size: 14px;
+    color: #a3a3a3;
+    font-weight: bold;
+    
+}
+.sidebar-menu #text-white {
+    color: white;
+}
+
+/* PLAYLIST */
 
 /*************************************************
    RESPONSIVE
@@ -69,6 +94,12 @@ body {
     }
     .small-logo img {
         width: 30px;
+        margin: 5px 10px;
+    }
+    .sidebar-menu span {
+        display: none;
+    }
+    .sidebar-menu ul li img {
         margin: 5px 10px;
     }
  }
