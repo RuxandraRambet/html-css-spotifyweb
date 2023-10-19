@@ -14,13 +14,12 @@ body {
 .container {
     width: 100vw;
     height: 100vh;
-    background-color: yellow;
 }
 .app-main {
     width: 100vw;
     height: calc(100vh - 90px);
     display: flex;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 ul {
     list-style: none;
@@ -32,9 +31,13 @@ a {
 .playlist span,
 .playlist ul li,
 .sidebar-bottom i,
-.sidebar-bottom span {
+.sidebar-bottom span,
+.music-container .music .center-nav ul {
     color: #a3a3a3;
     font-weight: bold;
+}
+.btn {
+    all: unset;
 }
 /* NAV SIDEBAR */
 .sidebar {
@@ -63,7 +66,12 @@ a {
     margin: 5px 10px;
 }
 /* SIDEBAR MENU */
-
+.sidebar-menu {
+    width: 100%;
+}
+.sidebar-menu ul {
+    margin-bottom: 20px;
+}
 .sidebar-menu ul li img {
     width: 30px;
     margin-left: 20px;
@@ -78,7 +86,7 @@ a {
 }
 
 /* PLAYLIST */
-.playlist ul {
+.playlist ul{
     height: 30vh;
     overflow-y: auto;
 }
@@ -104,6 +112,7 @@ a {
 
 /* SIDEBAR BOTTOM (Install and User) */
 .sidebar-bottom {
+    width: 100%;
     margin-bottom: 7px;
 }
 .sidebar-bottom i {
@@ -124,47 +133,141 @@ a {
 .user #username {
     color: white;
 }
-/* MUSIC CONTAINER*/
+/* MUSIC CONTAINER */
 .music-container {
     width: calc(100% - 230px);
     height: 100%;
     background-color: #141922;
+
 }
 /* TOPBAR */
 .topbar {
     width: calc(100% - 230px);
     height: 90px;
+    background-color: rgba(0,0, 0, 0.5);
     position: fixed;
     top: 0;
     right: 0;
     z-index: 99;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.row {
-    width: 100%;
-    height: 100%;
-    position: relative;
+    display: flex;
+    justify-content: flex-end;
 }
 .btn-upgrade {
     all: unset;
     background-color: inherit;
     border: 1px solid white;
-    padding: 15px 35px;
     border-radius: 30px;
-    margin: 20px 25px 20px 0;
-    position: absolute;
-    right: 0;    
+    padding: 15px 35px;
+    margin: 18px 25px 18px 0;
 }
 .btn-upgrade a {
     color: white;
     font-weight: bold;
 }
+/* CENTER NAV */
+.music-container .music {
+    padding-top: 120px;
+    height: 100%;
+    overflow-y: auto;
+}
+.music-container .music .center-nav ul {
+    text-align: center;
+}
+.music-container .music .center-nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    /* display: flex;
+    justify-content: center;
+    gap: 20px; */
+}
+
+/* RECENTLY PLAYED */
+ h2 {
+    margin-left: 20px;
+    color: white;
+}
+.albums {
+    display: flex;
+    justify-content: flex-start; 
+}
+.album {
+    margin: 10px;
+    width: calc(100% / 6 - 20px);
+}
+.album-top img {
+    width: 100%;
+    display: block;
+}
+.album .album-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+.album .album-bottom h3 {
+    color: white;
+}
+
+.album .album-bottom div {
+    color: #a3a3a3;
+    font-size: 12px;
+    margin-top: 10px;
+}
+/* CREATED FOR JOHN DOE */
+.createdfor {
+    margin-bottom: 30px;
+}
+.createdfor h2,
+.famous-artists h2 {
+    margin-bottom: 10px;
+}
+.createdfor p,
+.famous-artists p {
+    margin-left: 20px;
+    color: #a3a3a3;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+/* FAMOUS ARTISTS */
+.famous-artists .albums .album-top img {
+    border-radius: 50%;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    height: 90px;
+    background-color: #282828;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+}
+
 /*************************************************
    RESPONSIVE
  *************************************************/
+/* ≥768px MD */
+@media screen and (max-width: 768px) {
+    /* .music-container .music .center-nav ul {
+        flex-wrap: wrap;
+    } */
+    .albums {
+        flex-wrap: wrap;
+    }
+    .album {
+        width: calc(100% / 4 - 20px);
+    }
+}
+/* ≥576px SM*/
+@media screen and (max-width: 576px) {
+    .album {
+        width: calc(100% / 2 - 20px);
+    }
+}
 
- /* < 576px */
- @media screen and (max-width: 575px) {
+/* < 576px XS*/
+@media screen and (max-width: 575px) {
     .sidebar {
         width: 50px;
     }
@@ -200,5 +303,19 @@ a {
     .sidebar-bottom .fa-circle-user {
         margin: 0 12px;
     }
+    .music-container {
+        width: 100%;
+    }
+    .topbar {
+        width: 100%;
+    }
+    .albums {
+        flex-wrap: wrap;
+    }
+    .album {
+        width: calc(100% / 2 - 20px);
+    }
+    
  }
  
+
