@@ -246,7 +246,6 @@ a {
 .footer-left,
 .footer-right {
     width: 230px;
-    max-width: calc(100% / 3);
     display: flex;
 }
 .footer-center {
@@ -296,7 +295,9 @@ a {
     justify-content: center;
     color: white;
 }
-
+.footer-center-bottom span {
+    font-size: 12px;
+}
 .footer-center-top i:not(.fa-circle-play) {
     font-size: 20px;
     margin: 0 20px;
@@ -322,7 +323,7 @@ a {
 /* FOOTER  RANGE */
 .range {
     height: 8px;
-    width: 70%;
+    width: 60%;
     background-color: #5a5a5a;
     border: 1px solid transparent;
     border-radius: 10px;
@@ -365,6 +366,7 @@ a {
     .album {
         width: calc(100% / 4 - 20px);
     }
+
 }
 /*SM*/
 @media screen and (max-width: 768px) {
@@ -376,7 +378,24 @@ a {
         justify-content: space-between;
         gap: 2px;
     } 
-
+    .footer-left,
+    .footer-right {
+        width: 170px;
+    }
+    .footer-left {
+        margin-right: 30px;
+    }
+    .footer-center {
+        min-width: calc(100% - 340px); 
+    }
+    .footer-center-top i:not(.fa-circle-play) {
+        font-size: 15px;
+        margin: 0 10px;
+    }
+    .footer-center-top .fa-circle-play {
+        font-size: 20px;
+        margin: 0 15px;
+    }
 }
 
 /* XS*/
@@ -436,11 +455,18 @@ a {
     .footer-left img {
         height: 45%;
     }
+   
+    .footer-left,
+    .footer-right {
+        width: 140px;
+    }
+    .footer-center {
+        min-width: calc(100% - 280px);
+    }
     .footer-center-top,
     .footer-center-bottom {
         width: 100%;
     }
-    
  }
  
 
