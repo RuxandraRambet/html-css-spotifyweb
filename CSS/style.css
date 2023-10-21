@@ -27,12 +27,7 @@ ul {
 a {
     text-decoration: none;
 }
-.sidebar-menu span,
-.playlist span,
-.playlist ul li,
-.sidebar-bottom i,
-.sidebar-bottom span,
-.music-container .music .center-nav ul {
+.gray {
     color: #a3a3a3;
     font-weight: bold;
 }
@@ -83,6 +78,7 @@ a {
 }
 .sidebar-menu #text-white {
     color: white;
+    font-weight: bold;
 }
 
 /* PLAYLIST */
@@ -132,6 +128,7 @@ a {
 }
 .user #username {
     color: white;
+    font-weight: bold;
 }
 /* MUSIC CONTAINER */
 .music-container {
@@ -181,10 +178,10 @@ a {
     justify-content: center;
     gap: 20px; */
 }
-
 /* RECENTLY PLAYED */
  h2 {
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
     color: white;
 }
 .albums {
@@ -222,7 +219,7 @@ a {
 }
 .createdfor p,
 .famous-artists p {
-    margin-left: 20px;
+    margin-left: 10px;
     color: #a3a3a3;
     font-size: 12px;
     margin-bottom: 20px;
@@ -243,6 +240,8 @@ a {
     z-index: 99;
     display: flex;
 }
+
+
 .footer-left,
 .footer-right {
     width: 230px;
@@ -262,19 +261,19 @@ a {
     padding-left: 10px;
 }
 .footer-left img {
-    height: 60%;
+    height: 50%;
     object-fit: cover;
 }
 .album-name {
    padding-left: 10px;
    padding-right: 25px;
 }
-.album-name h6 {
+ .album-name h6 {
     color: white;
     font-size: 14px;
 }
 .album-name div {
-    font-size: 13px;
+    font-size: 12px;
     color: #a3a3a3;
 }
 .call-to-action {
@@ -284,7 +283,7 @@ a {
 }
 .call-to-action i {
     color: #a3a3a3;
-}
+} 
 /* FOOTER CENTER */
 .footer-center-top,
 .footer-center-bottom {
@@ -295,16 +294,18 @@ a {
     justify-content: center;
     color: white;
 }
+.footer-center-top {
+    margin-top: 10px;
+}
 .footer-center-bottom span {
-    font-size: 12px;
+    font-size: 10px;
 }
 .footer-center-top i:not(.fa-circle-play) {
-    font-size: 20px;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 .footer-center-top .fa-circle-play {
-    font-size: 35px;
-    margin: 0 25px;
+    font-size: 25px;
+    margin: 0 15px;
 }
 
 /* FOOTER RIGHT */
@@ -322,8 +323,8 @@ a {
 }
 /* FOOTER  RANGE */
 .range {
-    height: 8px;
-    width: 60%;
+    height: 6px;
+    width: 80%;
     background-color: #5a5a5a;
     border: 1px solid transparent;
     border-radius: 10px;
@@ -352,6 +353,51 @@ a {
 .range:hover .thumb {
     display: block;
 } 
+
+/* EFFECT ON HOVER */
+.gray:hover {
+    color: white;
+}
+.hover_white:hover {
+    color: white;
+}
+.topbar button:hover {
+    scale: 1.1;
+}
+
+.album-top{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.round .play {
+    border-radius: 50%;
+}
+.play {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0, 0, 0.5);
+    display: none;
+}
+.play-icon i {
+    color: white;
+    font-size: 50px;
+}
+.play-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.album-top:hover .play {
+    display: block;
+}
+.footer-center-top .fa-circle-play:hover {
+    scale: 1.1;
+}
 /*************************************************
    RESPONSIVE
  *************************************************/
@@ -366,6 +412,13 @@ a {
     .album {
         width: calc(100% / 4 - 20px);
     }
+    .footer-left,
+    .footer-right {
+        width: 224px;
+    }
+    .footer-center {
+        min-width: calc(100% - 448px); 
+    }
 
 }
 /*SM*/
@@ -378,28 +431,19 @@ a {
         justify-content: space-between;
         gap: 2px;
     } 
-    .footer-left,
-    .footer-right {
+    .footer-left {
         width: 170px;
     }
-    .footer-left {
-        margin-right: 30px;
+    .footer-right {
+        width: 200px;
     }
     .footer-center {
-        min-width: calc(100% - 340px); 
-    }
-    .footer-center-top i:not(.fa-circle-play) {
-        font-size: 15px;
-        margin: 0 10px;
-    }
-    .footer-center-top .fa-circle-play {
-        font-size: 20px;
-        margin: 0 15px;
+        min-width: calc(100% - 370px); 
     }
 }
 
 /* XS*/
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
     /* sidebar */
     .sidebar {
         width: 50px;
@@ -430,13 +474,7 @@ a {
     .sidebar-bottom hr {
         display: none;
     }
-    .sidebar-bottom .fa-circle-arrow-down {
-        margin: 18px
-    }
-    .sidebar-bottom .fa-circle-user {
-        margin: 0 12px;
-    }
-
+   
     /* music container */
     .music-container {
         width: 100%;
@@ -456,17 +494,20 @@ a {
         height: 45%;
     }
    
-    .footer-left,
-    .footer-right {
+    .footer-left {
         width: 140px;
     }
+    .footer-left img {
+        height: 35%;
+        object-fit: cover;
+    }
+    .footer-right {
+        width: 160px;
+    }
     .footer-center {
-        min-width: calc(100% - 280px);
+        min-width: calc(100% - 300px);
     }
-    .footer-center-top,
-    .footer-center-bottom {
-        width: 100%;
-    }
+
  }
  
 
