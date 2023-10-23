@@ -181,6 +181,22 @@ a {
     justify-content: center;
     gap: 20px; */
 }
+.active {
+    position: relative;
+    padding-bottom: 8px;
+}
+.active::after {
+    content: "";
+    width: 30px;
+    height: 4px;
+    background-color: greenyellow;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    display: block;
+    
+}
 /* RECENTLY PLAYED */
  h2 {
     margin-left: 10px;
@@ -468,6 +484,7 @@ a {
     .sidebar-menu ul li img {
         margin: 5px 10px;
     }
+   
     .playlist {
         display: none;
     }
